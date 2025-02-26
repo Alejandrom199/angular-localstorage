@@ -1,0 +1,15 @@
+
+<nav>
+  <!--[routerLinkActiveOptions]="{exact: true} -  Tiene que ser exactamente esta ruta '', para usar 'active' -->
+  <a routerLink=""
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{exact: true}">
+    Contador
+  </a>
+  <!-- Uso para varias valores computados -->
+  <a [routerLink]="['hero']" [routerLinkActive]="'active'">Hero</a>
+
+  <a [routerLink]="['dragonball']" [routerLinkActive]="'active'">Dragon Ball</a>
+
+  <a routerLink="dragonball-super" routerLinkActive="active">Dragon Ball Super</a>
+</nav>

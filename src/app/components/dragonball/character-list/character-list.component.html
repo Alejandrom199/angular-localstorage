@@ -1,0 +1,23 @@
+<h3>{{listName()}}</h3>
+<ul>
+  @for (character of characters(); track character.id; let idx = $index){
+    @if(character.power > 500){
+      <li>
+        <span>{{idx}} - {{character.name}} </span>
+
+        <!-- Clases de CSS de forma condicional -->
+        <strong
+          [class.text-danger]="character.power > 9000"
+          [class.text-primary]="character.power < 9000"
+        >
+          <!--[ngClass]="powerClasses()" Se puede usar una señal computada para dar clases a etiquetas-->
+          ({{character.power}})
+        </strong>
+      </li>
+    } @else {
+      <li>
+        <strong>Aquí no hay nadie</strong>
+      </li>
+    }
+  }
+</ul>

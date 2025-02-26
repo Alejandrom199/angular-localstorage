@@ -1,0 +1,23 @@
+<h1>DragonBall Page</h1>
+<hr/>
+
+<section class="row">
+  <!--
+  Pasos que realiza la comunicación hijo a padre
+  1. El hijo crea un outputEmitter y lo usa en un metodo para emitir(enviar) una entidad al padre -> hijo.ts
+  2. Desde la vista del hijo, con un boton hacemos llamar este método creado por el hijo para emitir -> hijo.html
+  3. El padre crea un metodo en el cual va a recibir la emision o envio de alguna entidad que envie el hijo -> padre.ts
+  4. Desde la vista del padre se conecta, llamando al hijo y usando el output creado por el hijo como evento, igualandolo al método del padre para recibir y en su parametro poniendo '$event' -> padre.html
+  -->
+
+  <div class="col-12 col-sm-6">
+    <dragonball-character-add
+      (newCharacterEmit)="dragonballService.addCharacterReceive($event)"
+    />
+  </div>
+
+  <div class="col-12 col-sm-6">
+    <dragonball-character-list [characters]="dragonballService.characters()" listName="Listado de Poderosos"/>
+  </div>
+
+</section>

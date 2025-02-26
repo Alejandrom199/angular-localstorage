@@ -1,0 +1,22 @@
+<h3>Agregar: {{name()}}</h3>
+
+<!-- [propiedad] = value, se usa principalmente cuando los values son variables -->
+<!-- #txtName, es referencia directa de lo que se recibe -->
+<input type="text"
+       class="form-control"
+       placeholder="Nombre"
+       [value]="name()"
+       (change)="name.set(txtName.value)"
+       (input)="name.set(txtName.value)"
+       #txtName
+>
+
+<input type="number"
+       class="form-control mt-2"
+       placeholder="power"
+       [value]="power()"
+       (change)="power.set(Number(txtPower.value))"
+       (input)="power.set(Number(txtPower.value))"
+       #txtPower
+>
+<button (click)="addCharacterEmit()" class="mt-2 btn btn-primary">Agregar</button>
